@@ -1,13 +1,33 @@
-# Exported from Render on 2024-07-11T13:03:33Z
 services:
-- type: web
-  name: alist
-  env: docker
-  runtime: image
-  image:
-    url: registry.cn-hangzhou.aliyuncs.com/xfdocker/xhofe_alist:latest
-  plan: free
-  envVars:
-  - fromGroup: alist
-  region: virginia
-version: "1"
+  # A Docker web service
+  - type: web
+    name: alist
+    env: docker
+    repo: https://github.com/alist-org/alist-render.git # optional    
+    region: virginia
+    plan: free # optional (defaults to starter)
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 5244
+      - key: DB_TYPE
+         value: mysql
+        sync: false
+      - key: DB_HOST
+         value: mysql.ct8.pl
+        sync: false
+      - key: DB_PORT
+         value: 3306
+        sync: false
+      - key: DB_USER
+         value: m45254_admin
+        sync: false
+      - key: DB_PASS
+         value: r5[19_AsVi744gIdR-13Vi6+4s?GXc
+        sync: false
+      - key: DB_NAME
+         value: m45254_alist
+        sync: false
+      - key: DB_TABLE_PREFIX
+         value: alist_
+        sync: false
