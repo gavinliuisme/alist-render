@@ -3,7 +3,7 @@ services:
   - type: web
     name: alist
     env: docker
-    repo: https://github.com/alist-org/alist-render.git # optional    
+    repo: https://github.com/alist-org/alist-render.git # optional
     region: virginia
     plan: free # optional (defaults to starter)
     healthCheckPath: /
@@ -11,23 +11,26 @@ services:
       - key: PORT
         value: 5244
       - key: DB_TYPE
-         value: mysql
+        # value: sqlite3
         sync: false
       - key: DB_HOST
-         value: mysql.ct8.pl
+        # value: db_host
         sync: false
       - key: DB_PORT
-         value: 3306
+        # value: 3306
         sync: false
       - key: DB_USER
-         value: m45254_admin
+        # value: db_user
         sync: false
       - key: DB_PASS
-         value: r5[19_AsVi744gIdR-13Vi6+4s?GXc
+        # value: db_password
         sync: false
       - key: DB_NAME
-         value: m45254_alist
+        # value: db_name
         sync: false
       - key: DB_TABLE_PREFIX
-         value: alist_
+        # value: alist_
+        sync: false
+      - key: CDN
+        # value: https://npm.elemecdn.com/alist-web@$version/dist
         sync: false
