@@ -1,37 +1,12 @@
 services:
 - type: web
   name: alist
-  env: docker
+  env: Image
   runtime: image
   image:
     url: registry.cn-hangzhou.aliyuncs.com/xfdocker/xhofe_alist:latest
   plan: free
   envVars:
-    - key: PORT
-      value: 5244
-    - key: DB_TYPE
-      # value: sqlite3
-      sync: false
-    - key: DB_HOST
-      # value: db_host
-      sync: false
-    - key: DB_PORT
-      # value: 3306
-      sync: false
-    - key: DB_USER
-      # value: db_user
-      sync: false
-    - key: DB_PASS
-      # value: db_password
-      sync: false
-    - key: DB_NAME
-      # value: db_name
-      sync: false
-    - key: DB_TABLE_PREFIX
-      # value: alist_
-      sync: false
-    - key: CDN
-      # value: https://npm.elemecdn.com/alist-web@$version/dist
-      sync: false
+  - fromGroup: alist
   region: virginia
 version: "1"
