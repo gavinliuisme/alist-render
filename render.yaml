@@ -1,11 +1,12 @@
 services:
-  # A Docker web service
-  - type: web
-    name: alist
+- type: web
+  name: alist
     env: docker
-    repo: https://github.com/alist-org/alist-render.git # optional
-    region: virginia
-    plan: free # optional (defaults to starter)
-    healthCheckPath: /
-    envVars:
-    - fromGroup: alist
+  runtime: image
+  image:
+    url: registry.cn-hangzhou.aliyuncs.com/xfdocker/xhofe_alist:latest
+  plan: free
+  envVars:
+  - fromGroup: alist
+  region: virginia
+version: "1"
