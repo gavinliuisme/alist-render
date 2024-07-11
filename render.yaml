@@ -2,6 +2,7 @@
 services:
 - type: web
   name: alist
+  env: docker
   runtime: image
   image:
     url: registry.cn-hangzhou.aliyuncs.com/xfdocker/xhofe_alist:latest
