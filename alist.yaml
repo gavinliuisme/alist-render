@@ -1,0 +1,12 @@
+# Exported from Render on 2024-07-11T13:03:33Z
+services:
+- type: web
+  name: alist
+  runtime: image
+  image:
+    url: registry.cn-hangzhou.aliyuncs.com/xfdocker/xhofe_alist:latest
+  plan: free
+  envVars:
+  - fromGroup: alist
+  region: virginia
+version: "1"
